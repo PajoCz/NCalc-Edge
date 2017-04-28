@@ -241,7 +241,7 @@ namespace NCalc
                     break;
             }
 
-            return null;
+            return (dynamic)a + (dynamic)b;
         }
 
         public static object Soustract(object a, object b)
@@ -460,7 +460,7 @@ namespace NCalc
                     break;
             }
 
-            return null;
+            return (dynamic)a - (dynamic)b;
         }
 
         public static object Multiply(object a, object b)
@@ -661,7 +661,7 @@ namespace NCalc
                     break;
             }
 
-            return null;
+            return (dynamic)a * (dynamic)b;
         }
 
         public static object Divide(object a, object b)
@@ -862,7 +862,7 @@ namespace NCalc
                     break;
             }
 
-            return null;
+            return (dynamic)a / (dynamic)b;
         }
 
         public static object Modulo(object a, object b)
@@ -1063,7 +1063,7 @@ namespace NCalc
                     break;
             }
 
-            return null;
+            return (dynamic)a % (dynamic)b;
         }
 
         public static object Max(object a, object b)

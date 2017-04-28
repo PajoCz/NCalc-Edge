@@ -69,11 +69,11 @@ namespace NCalc.Domain
             }
         }
 
-        private static bool IsReal(object value)
+        private static bool IsRealOrObject(object value)
         {
             var typeCode = Type.GetTypeCode(value.GetType());
 
-            return typeCode == TypeCode.Decimal || typeCode == TypeCode.Double || typeCode == TypeCode.Single;
+            return typeCode == TypeCode.Decimal || typeCode == TypeCode.Double || typeCode == TypeCode.Single || typeCode == TypeCode.Object;
         }
 
         public override void Visit(BinaryExpression expression)
@@ -113,7 +113,7 @@ namespace NCalc.Domain
                     break;
 
                 case BinaryExpressionType.Div:
-                    Result = IsReal(left()) || IsReal(right())
+                    Result = IsRealOrObject(left()) || IsRealOrObject(right())
                                  ? Numbers.Divide(left(), right())
                                  : Numbers.Divide(Convert.ToDouble(left()), right());
                     break;
